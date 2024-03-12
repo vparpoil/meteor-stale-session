@@ -6,10 +6,10 @@
 // - staleSessionHeartbeatInterval: interval (in ms) at which activity heartbeats are sent up to the server
 // - staleSessionActivityEvents: the jquery events which are considered indicator of activity e.g. in an on() call.
 //
-var heartbeatInterval = Meteor.settings && Meteor.settings.public && Meteor.settings.public.staleSessionHeartbeatInterval || (3*60*1000); // 3mins
-var activityEvents = Meteor.settings && Meteor.settings.public && Meteor.settings.public.staleSessionActivityEvents || 'mousemove click keydown';
+const heartbeatInterval = Meteor.settings && Meteor.settings.public && Meteor.settings.public.staleSessionHeartbeatInterval || (3*60*1000); // 3mins
+const activityEvents = Meteor.settings && Meteor.settings.public && Meteor.settings.public.staleSessionActivityEvents || 'mousemove click keydown';
 
-var activityDetected = false;
+let activityDetected = false;
 
 Meteor.startup(function() {
 
